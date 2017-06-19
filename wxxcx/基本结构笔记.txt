@@ -1,0 +1,45 @@
+微信小程序
+一，关键文件 （app.js , app,json , app,wxss）
+1.app.js
+监听并处理小程序的生命周期函数
+声明全局变量
+调用框架丰富的API
+
+2.app.json
+全局配置，不可添加注释
+配置 哪些页面组成 窗口背景颜色 导航条样式 默认标题
+
+3.app.wxss
+公共样式表
+
+二,创建页面
+页面全部在pages目录下，小程序中的每一个页面（路径 + 页面名）都要在app.json中配置
+，pages中第一个页面就是首页。
+
+每一个小程序页面是由同路径下同名不同后缀的几个文件组成
+js                --    页面逻辑
+wxml         --    页面结构
+wxss          --    页面样式
+json           --    页面配置
+
+
+三，请打开各个文件学习各项配置方法内容~~~
+
+四，模块化
+可以将一些公共的代码抽离成为一个单独的js文件，作为一个模块。模块只有通过module.exports才能对外暴露接口。
+
+1，common.js
+function sayHello(name) {
+  console.log('Hello ' + name + '!')
+}
+module.exports = {
+  sayHello: sayHello
+}
+
+2，var common = require('common.js')
+  Page({
+    helloMINA: function() {
+      common.sayHello('MINA')
+    }
+  })
+

@@ -1,0 +1,41 @@
+//总配置文件
+
+
+{
+//  设置文件路径 第一个为首页
+  "pages": [
+    "pages/index/index",
+    "pages/logs/index"
+  ],
+  //设置默认窗口样式
+  "window": {
+    "navigationBarBackgroundColor": "#000000",//导航栏背景颜色
+    "navigationBarTitleText": "Demo",   //导航栏标题文字内容
+    "navigationBarTextStyle": "#000000",//导航栏标题颜色，仅支持 black/white
+    "backgroundColor": "#000000",//窗口的背景色
+    "backgroundTextStyle": "#000000"//下拉背景字体、loading 图的样式，仅支持 dark/light
+  },
+  //设置底部导航样式
+  "tabBar": {
+    "color":"red",//文字默认颜色
+    "selectedColor":"black",//文字选中时的颜色
+    "backgroundColor":"#000000",//tab背景色
+    "borderStyle":"black",//	tabbar上边框的颜色， 仅支持 black/white
+    "list": [{  //tab 的列表，详见 list 属性说明，最少2个、最多5个 tab
+      "pagePath": "pages/index/index",//页面路径，必须在 pages 中先定义
+      "text": "首页",//tab 上按钮文字
+      "iconPath":'123/123',//图片路径，icon 大小限制为40kb
+      "selectedIconPath":'123/123',//选中时的图片路径，icon 大小限制为40kb
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "日志"
+    }]
+  },
+  //设置网络超时时间
+  "networkTimeout": {
+    "request": 10000,//	wx.request的超时时间，单位毫秒
+    "downloadFile": 10000//	wx.downloadFile的超时时间，单位毫秒
+  },
+  //是否开启DUBUG模式
+  "debug": true
+}
